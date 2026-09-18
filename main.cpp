@@ -5,26 +5,19 @@ using namespace std;
 
 int main() {
 
-    string fullName, studentID, email, hometown;
-
-    cout << "Enter your full name: ";
-    getline(cin, fullName);
-
-    cout << "Enter your student ID: ";
-    getline(cin, studentID);
-
-    cout << "Enter your email: ";
-    getline(cin, email);
-
-    cout << "Enter your hometown: ";
-    getline(cin, hometown);
-
-    cout << "\n===== STUDENT PROFILE =====\n";
-    cout << "Full name   : " << fullName << endl;
-    cout << "Student ID  : " << studentID << endl;
-    cout << "Email       : " << email << endl;
-    cout << "Hometown    : " << hometown << endl;
-    cout << "===========================\n";
+    string name;
+        cout << "Enter a sentence: ";
+    getline(cin, name);
+        cout << "Length of the sentence: " << name.length() << endl;
+    size_t pos = name.find("C++");
+        if (pos != string::npos) {
+            string part = name.substr(pos, 3);
+            cout << "Found: " << part << endl;
+            name.replace(pos, 3, "Programming");
+            cout << "New sentence: " << name << "\n";
+        } else {
+            cout << "Not found!" << endl;
+    }
 
     return 0;
 }
